@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Crazy Multiplier Tank Furiously Invades North Korea</title>
+	<link href="https://fonts.googleapis.com/css?family=Fira+Mono:700|Passion+One" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href='css/style.css'>
+	<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+</head>
+<body>
+
+<div class="container antifouc">
+	<div class="dashboard hide">
+		<div class="healthBoard">
+			<p class="score">Score: <span>0</span></p>
+			<p class="bonusInfo"></p>
+			<div class="tankHearts">
+			</div>
+		</div>
+		<div class="mainBoard">
+			<div class="taskBoard" id='taskBoard'>
+				<p class="question"></p>
+				<p class="answer"></p>
+				<p class="foresight"></p>	
+			</div>
+			<div class="infoBoard">
+				<p class="info1"></p>
+				<p class="info2"></p>
+				<p class="danger"></p>
+			</div>
+		</div>
+		<div class="navigationBoard">
+			<p class="mileage"><span>0.00</span> km</p>
+			<p class="odometer"><span>0</span> km/h</p>
+			<!-- <p class="cosmometer"><span>0</span> KM/H</p>
+			<p class="prepometer">0</p> -->
+			<div class="foeHearts"></div>
+		</div>	
+	</div> 
+
+	<div class="tankZone">
+		<div class="tank"></div>
+		<div class="bonus"></div>
+	</div>
+
+	<div class="pathway"></div>
+
+	<div class="foeZone">
+		<div class="foeTank"></div>
+	</div>
+
+	<div class="stageBoard">
+		<div class="patienceBar"></div>
+		<p class="stageInfo"></p>
+	</div>
+
+	<div class="mainMenu">
+		<img class='logo' src="images/logo.png" alt="">
+		
+		<p class="highscore">Highscore: <span>0</span></p>
+
+		<div class="options">
+			<div class="sounds">1 * 1<br />Sounds: <span>ON</span></div>
+			<div class="begin">Type 2 * 2 to Begin</div>
+			<div class="vivaldi">3 * 3<br />Vivaldi: <span>ON</span></div>
+		</div>
+
+		<p class="typeHere">_</p>
+		
+		<footer>© 2016 by Grzegorz Dziegelewski</footer>
+
+		<div class="gameSummary">
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+	</div>
+	
+</div>
+
+<script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="javascript.js"></script>
+
+<audio id="vivaldi" loop>
+  <source src="sounds/vivaldi.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="type">
+  <source src="sounds/type.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="shot">
+  <source src="sounds/shot.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="misfire">
+  <source src="sounds/misfire.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="bonus">
+  <source src="sounds/bonus.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="tankDamaged">
+  <source src="sounds/foeDamaged.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="tankDestroyed">
+  <source src="sounds/foeDestroyed.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="foeDamaged">
+  <source src="sounds/foeDamaged.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="foeDestroyed">
+  <source src="sounds/foeDestroyed.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="foeImpact">
+  <source src="sounds/foeImpact.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="nuke">
+  <source src="sounds/nuke.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="win">
+  <source src="sounds/win.mp3" type="audio/mpeg">
+</audio>
+
+</body>
+</html>

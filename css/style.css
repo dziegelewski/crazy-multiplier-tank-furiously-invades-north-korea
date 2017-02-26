@@ -1,0 +1,454 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  background-color: #111;
+  font-family: 'Passion One', cursive;
+  cursor: default; }
+
+sup {
+  vertical-align: super;
+  font-size: smaller; }
+
+.container {
+  width: 900px;
+  height: 600px;
+  background-color: white;
+  margin: auto;
+  overflow: hidden;
+  color: #222;
+  -webkit-transition: opacity 1000ms;
+  -moz-transition: opacity 1000ms;
+  -o-transition: opacity 1000ms;
+  transition: opacity 1000ms; }
+  .container.antifouc {
+    opacity: 0; }
+  .container.bombed {
+    -webkit-transition: background-color 400ms;
+    -moz-transition: background-color 400ms;
+    -o-transition: background-color 400ms;
+    transition: background-color 400ms;
+    background-color: #000; }
+  .container.afterbomb {
+    -webkit-transition: background-color 3000ms;
+    -moz-transition: background-color 3000ms;
+    -o-transition: background-color 3000ms;
+    transition: background-color 3000ms; }
+  .container * {
+    margin: 0;
+    box-sizing: border-box; }
+  .container .mainMenu {
+    padding: -5px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    bottom: 1040px;
+    text-align: center;
+    z-index: 100; }
+    .container .mainMenu .logo {
+      margin-top: 10px; }
+    .container .mainMenu h1 {
+      font-weight: bold;
+      font-size: 114px;
+      line-height: 90%;
+      margin-top: 30px; }
+    .container .mainMenu .gameSummary {
+      clear: both;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: left;
+      font-size: 28px;
+      position: relative;
+      bottom: 580px;
+      width: 420px;
+      padding: 12px;
+      padding-left: 60px;
+      height: 320px;
+      margin: auto;
+      background: #eee;
+      border-radius: 20px;
+      display: none;
+      -webkit-box-shadow: 1px 1px 1px 1px rgba(200, 200, 200, 0.75);
+      -moz-box-shadow: 1px 1px 1px 1px rgba(200, 200, 200, 0.75);
+      box-shadow: 1px 1px 1px 1px rgba(200, 200, 200, 0.75); }
+      .container .mainMenu .gameSummary span {
+        color: #00c; }
+        .container .mainMenu .gameSummary span.red {
+          color: #c00; }
+    .container .mainMenu .highscore {
+      margin-top: 32px;
+      font-size: 40px; }
+@keyframes blinking {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-webkit-keyframes blinking {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+    .container .mainMenu .begin {
+      animation: blinking 1.2s infinite;
+      -webkit-animation: blinking 1.2s infinite; }
+    .container .mainMenu .options {
+      width: 100%;
+      display: flex;
+      margin-top: 85px;
+      color: #c00;
+      font-size: 29px; }
+      .container .mainMenu .options div {
+        width: 33%; }
+      .container .mainMenu .options .disabled {
+        opacity: 0.6; }
+    .container .mainMenu .typeHere {
+      color: #00c;
+      font-size: 90px;
+      margin-top: -25px;
+      font-family: 'Fira Mono', monospace;
+      font-weight: bold; }
+    .container .mainMenu footer {
+      float: right;
+      margin: 5px;
+      margin-top: -18px;
+      margin-right: 10px;
+      font-size: 15px; }
+  .container .dashboard {
+    width: 100%;
+    height: 280px;
+    box-sizing: border-box;
+    padding: 0; }
+    .container .dashboard > div {
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+      height: 100%;
+      width: 27%; }
+    .container .dashboard .healthBoard {
+      overflow: hidden;
+      color: #080; }
+      .container .dashboard .healthBoard .score {
+        font-size: 30px;
+        margin-top: 40px;
+        margin-left: 30px; }
+      .container .dashboard .healthBoard .bonusInfo {
+        margin-left: 30px;
+        line-height: 120%;
+        height: 0;
+        font-size: 30px;
+        color: #00c;
+        position: relative;
+        top: 60px; }
+      .container .dashboard .healthBoard .tankHearts {
+        margin-top: 100px;
+        padding-left: 30px;
+        width: 220px; }
+        .container .dashboard .healthBoard .tankHearts .heart {
+          margin-right: 5px;
+          display: inline-block;
+          width: 30px;
+          height: 30px;
+          background-image: url("../images/heart.png"); }
+    .container .dashboard .mainBoard {
+      overflow: hidden;
+      width: 45%; }
+      .container .dashboard .mainBoard div {
+        margin-top: 90px; }
+        .container .dashboard .mainBoard div p {
+          font-size: 80px;
+          text-align: center; }
+      .container .dashboard .mainBoard .taskBoard .question {
+        color: #c00;
+        font-family: 'Fira Mono', monospace;
+        font-weight: bold; }
+        .container .dashboard .mainBoard .taskBoard .question .break {
+          font-size: 15px;
+          color: transparent; }
+      .container .dashboard .mainBoard .taskBoard .answer, .container .dashboard .mainBoard .taskBoard .foresight {
+        margin-top: 10px;
+        color: #00c;
+        letter-spacing: 15px;
+        font-family: 'Fira Mono', monospace;
+        font-weight: bold; }
+      .container .dashboard .mainBoard .taskBoard .foresight {
+        opacity: 0.4;
+        position: relative;
+        bottom: 90px;
+        z-index: 0; }
+        .container .dashboard .mainBoard .taskBoard .foresight span {
+          color: transparent; }
+      .container .dashboard .mainBoard .infoBoard {
+        margin-top: 90px; }
+        .container .dashboard .mainBoard .infoBoard .danger {
+          position: relative;
+          top: 55px;
+          color: #c00;
+          animation: blinking 0.6s infinite;
+          -webkit-animation: blinking 0.6s infinite; }
+        .container .dashboard .mainBoard .infoBoard .bonusInfo {
+          font-size: 50px;
+          color: #00c;
+          position: relative;
+          top: 15px; }
+    .container .dashboard .navigationBoard {
+      overflow: hidden; }
+      .container .dashboard .navigationBoard .mileage, .container .dashboard .navigationBoard .odometer {
+        color: #00c;
+        font-size: 30px;
+        text-align: right;
+        margin: 40px 30px 0 0; }
+      .container .dashboard .navigationBoard .odometer {
+        margin: 10px 30px 0 0;
+        visibility: hidden; }
+      .container .dashboard .navigationBoard .foeHearts {
+        width: 220px;
+        height: 30px;
+        float: right;
+        margin-top: 57px;
+        padding-right: 30px; }
+        .container .dashboard .navigationBoard .foeHearts .heart {
+          float: right;
+          margin-right: 5px;
+          display: inline-block;
+          width: 30px;
+          height: 30px;
+          background-image: url("../images/heart.png"); }
+
+.stageBoard {
+  width: 400px;
+  height: 80px;
+  position: relative;
+  bottom: 470px;
+  left: 470px;
+  overflow: hidden; }
+  .stageBoard .stageInfo {
+    margin-top: 50px;
+    clear: both;
+    text-align: right;
+    font-size: 20px;
+    -webkit-transition: left 5s;
+    -webkit-transition-timing-function: linear;
+    -moz-transition: left 5s;
+    -moz-transition-timing-function: linear;
+    -o-transition: left 5s;
+    -o-transition-timing-function: linear;
+    transition: left 5s;
+    transition-timing-function: linear;
+    position: relative; }
+
+.cannonball {
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  background: #000;
+  position: relative; }
+
+.tankZone {
+  width: 600px;
+  height: 300px;
+  position: relative;
+  bottom: 100px;
+  left: 90px; }
+  .tankZone .tank {
+    background-image: url("../images/TheTank.png");
+    width: 300px;
+    height: 150px;
+    position: relative;
+    top: 150px;
+    left: 1500px;
+    z-index: 100; }
+    .tankZone .tank .cannonball {
+      left: 285px;
+      top: 50px; }
+  .tankZone .bonus {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    left: 10000px; }
+  .tankZone [data-bonus="extraScore"] {
+    background-image: url("../images/bonus/extraScore.png"); }
+  .tankZone [data-bonus="extraLife"] {
+    background-image: url("../images/bonus/extraLife.png"); }
+  .tankZone [data-bonus="extraTime"] {
+    background-image: url("../images/bonus/extraTime.png"); }
+  .tankZone [data-bonus="doubleShooter"] {
+    background-image: url("../images/bonus/doubleShooter.png"); }
+  .tankZone [data-bonus="foresight"] {
+    background-image: url("../images/bonus/foresight.png"); }
+  .tankZone .scored {
+    left: 75px;
+    bottom: 120px;
+    z-index: 100;
+    animation: tankScoredAnimation 1.2s; }
+@keyframes tankScoredAnimation {
+  100% {
+    bottom: 240px; } }
+.pathway {
+  width: 1100px;
+  height: 80px;
+  position: relative;
+  top: -170px;
+  right: 100px;
+  overflow: hidden;
+  padding-left: 50px; }
+  .pathway .ground {
+    z-index: -10;
+    width: 50px;
+    height: 100%;
+    display: inline-block; }
+
+.foeZone {
+  width: 500px;
+  height: 300px;
+  position: relative;
+  left: 400px;
+  bottom: 480px; }
+  .foeZone .foeTank {
+    width: 400px;
+    height: 300px;
+    position: relative;
+    top: 0px;
+    left: 520px;
+    -webkit-transition-timing-function: linear;
+    -webkit-transition: left 1s;
+    -moz-transition-timing-function: linear;
+    -moz-transition: left 1s;
+    -o-transition-timing-function: linear;
+    -o-transition: left 1s;
+    transition-timing-function: linear;
+    transition: left 1s;
+    background-position: left bottom;
+    background-repeat: no-repeat; }
+    .foeZone .foeTank .cannonball {
+      top: 205px; }
+  .foeZone [data-foe="tank1"] {
+    background-image: url("../images/foes/tank1.png"); }
+  .foeZone [data-foe="tank2"] {
+    background-image: url("../images/foes/tank2.png"); }
+  .foeZone [data-foe="tank3"] {
+    background-image: url("../images/foes/tank3.png"); }
+  .foeZone [data-foe="van1"] {
+    background-image: url("../images/foes/van1.png"); }
+  .foeZone [data-foe="van2"] {
+    background-image: url("../images/foes/van2.png"); }
+  .foeZone [data-foe="atom1"] {
+    background-image: url("../images/foes/atom1.png"); }
+  .foeZone [data-foe="atom2"] {
+    background-image: url("../images/foes/atom2.png"); }
+  .foeZone [data-foe="cosmic1"] {
+    background-image: url("../images/foes/cosmic1.png"); }
+  .foeZone [data-foe="cosmic2"] {
+    background-image: url("../images/foes/cosmic2.png"); }
+  .foeZone [data-foe="hammer1"] {
+    background-image: url("../images/foes/hammer1.png"); }
+  .foeZone [data-foe="missle1"] {
+    background-image: url("../images/foes/missle1.png"); }
+  .foeZone [data-foe="missle2"] {
+    background-image: url("../images/foes/missle2.png"); }
+  .foeZone [data-foe="chairman1"] {
+    background-image: url("../images/foes/chairman1.png"); }
+  .foeZone .scored {
+    left: 200px;
+    bottom: 180px;
+    animation: foeScoredAnimation 1.2s; }
+@keyframes foeScoredAnimation {
+  100% {
+    bottom: 290px; } }
+.hide {
+  visibility: hidden; }
+
+.scored {
+  opacity: 0.8;
+  font-size: 70px;
+  color: #080;
+  position: relative; }
+
+.explosion {
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  position: relative;
+  bottom: -30px;
+  left: 90px;
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-image: url("../images/explosion.png");
+  animation: xplode 0.17s; }
+
+@keyframes xplode {
+  100% {
+    transform: scale(2.3);
+    opacity: 0.5; } }
+.patienceBar {
+  margin: auto;
+  margin-right: 30px;
+  width: 350px;
+  height: 2px;
+  padding: auto;
+  padding-right: 60px; }
+  .patienceBar .patiencePill {
+    float: right;
+    margin: 1px;
+    width: 15px;
+    height: 8px;
+    background-color: #000;
+    border-radius: 10px; }
+    .patienceBar .patiencePill.extraPill {
+      background-color: #00c; }
+
+.red {
+  color: #c00; }
+
+.win {
+  color: #c00;
+  animation: blinking 1.2s infinite;
+  -webkit-animation: blinking 1.2s infinite; }

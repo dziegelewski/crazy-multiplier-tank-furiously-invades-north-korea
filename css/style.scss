@@ -1,0 +1,591 @@
+@import 'reset';
+
+$red: #c00;
+$green: #080;
+$blue: #00c;
+
+body {
+	background-color: #111;
+	font-family: 'Passion One', cursive;
+	cursor: default;
+
+}
+
+sup { 
+    vertical-align: super;
+    font-size: smaller;
+}
+
+.container {
+	width: 900px;
+	height: 600px;
+	background-color: white;
+	margin: auto;
+	overflow: hidden;
+	color: #222;
+	-webkit-transition: opacity 1000ms;
+	-moz-transition: opacity 1000ms;
+	-o-transition: opacity 1000ms;
+	transition: opacity 1000ms;
+
+	&.antifouc {
+		opacity: 0;
+	}
+
+	&.bombed {
+		-webkit-transition: background-color 400ms;
+		-moz-transition: background-color 400ms;
+		-o-transition: background-color 400ms;
+		transition: background-color 400ms;
+		background-color: #000;
+	}
+	
+	&.afterbomb {
+		-webkit-transition: background-color 3000ms;
+		-moz-transition: background-color 3000ms;
+		-o-transition: background-color 3000ms;
+		transition: background-color 3000ms;
+	}
+
+	* {
+		margin: 0;
+		box-sizing: border-box;
+	}
+
+	.mainMenu {
+		padding: -5px;
+		width: 100%;
+		height: 100%;
+		position: relative;
+		bottom: 1040px;
+		text-align: center;
+		z-index: 100;
+		
+		.logo {
+			margin-top: 10px;
+		}
+
+		h1 {
+			font-weight: bold;
+			font-size: 114px;
+			line-height: 90%;
+			margin-top: 30px;
+			// margin-left: -7px;
+			// visibility: hidden;
+		}
+
+		.gameSummary {
+			clear: both;
+			flex-direction: column;
+			justify-content: space-between;
+			text-align: left;
+			font-size: 28px;
+			position: relative;
+			bottom: 580px;
+			width: 420px;
+			padding: 12px;
+			padding-left: 60px;
+			height: 320px;
+			margin: auto;
+			background: #eee;
+			border-radius: 20px;
+			display: none;
+			$summary-box-shadow-color: 200;
+			-webkit-box-shadow: 1px 1px 1px 1px rgba($summary-box-shadow-color,$summary-box-shadow-color,$summary-box-shadow-color,0.75);
+			-moz-box-shadow: 1px 1px 1px 1px rgba($summary-box-shadow-color,$summary-box-shadow-color,$summary-box-shadow-color,0.75);
+			box-shadow: 1px 1px 1px 1px rgba($summary-box-shadow-color,$summary-box-shadow-color,$summary-box-shadow-color,0.75);
+
+			p {
+				// margin-bottom: 5px;
+				// background: red;
+			}
+
+			span {
+				color: $blue;
+
+				&.red {
+					color: $red;
+				}
+			}
+		}
+
+		.highscore {
+			margin-top: 32px;
+			font-size: 40px;
+			// z-index: 500;
+		}
+
+		@keyframes blinking {
+		0% {opacity: 1;}
+		50% {opacity: 0;}
+		100% {opacity: 1;}
+		}
+
+		@-webkit-keyframes blinking {
+		0% {opacity: 1;}
+		50% {opacity: 0;}
+		100% {opacity: 1;}
+		}
+
+		.begin {
+			animation: blinking 1.2s infinite;
+			-webkit-animation: blinking 1.2s infinite;
+		}
+
+	
+		.options {
+			width: 100%;
+			display: flex;
+			margin-top: 85px;
+			color: $red;
+			font-size: 29px;
+
+			div {
+				width: 33%;
+			}
+
+			.disabled {
+				opacity: 0.6;
+			}
+		}
+
+		.typeHere {
+			color: $blue;
+			font-size: 90px;
+			margin-top: -25px;
+			font-family: 'Fira Mono', monospace;
+			font-weight: bold;
+
+		}
+
+		footer {
+			float:right;
+			margin: 5px;
+			margin-top: -18px;
+			margin-right: 10px;
+			font-size: 15px;
+		}
+
+	
+	}
+
+
+
+
+
+	.dashboard {
+		width: 100%;
+		height: 280px;
+		box-sizing: border-box;
+		padding: 0;
+
+		&>div {
+			margin: 0;
+			padding: 0;
+			display: inline-block;
+			height: 100%;
+			width: 27%;
+		}
+
+
+
+		//left side
+		.healthBoard {
+			overflow: hidden;
+			color: $green;
+
+
+			.score {
+				font-size: 30px;
+				margin-top: 40px;
+				margin-left: 30px;
+			}
+
+			.bonusInfo {
+				margin-left: 30px;
+				line-height: 120%;
+				// width: 0;
+				height: 0;
+				font-size: 30px;
+				color: $blue;
+				position: relative;
+				top: 60px;
+				
+			}
+
+			.tankHearts {
+				margin-top: 100px;
+				padding-left: 30px;
+				width: 220px;
+
+				.heart {
+					margin-right: 5px;
+					display: inline-block;
+					width: 30px;
+					height: 30px;
+					background-image: url('../images/heart.png');
+				}
+			}
+
+			
+		}
+
+	
+		//center
+		.mainBoard {
+			overflow: hidden;
+			width: 45%;
+			// background-color: silver;
+			div {
+				margin-top: 90px;
+				p {
+					font-size: 80px;
+					text-align: center;
+					// margin: 20px;
+				}
+			}
+
+
+			.taskBoard {
+				.question {
+					color: $red;
+					font-family: 'Fira Mono', monospace;
+					font-weight: bold;
+
+					.break {
+						font-size: 15px;
+						color: transparent;
+					}
+				}
+
+				.answer, .foresight {
+					margin-top: 10px;
+					color: $blue;
+					letter-spacing: 15px;
+					font-family: 'Fira Mono', monospace;
+					font-weight: bold;
+				}
+
+				.foresight {
+					// color: #ccc;
+					opacity: 0.4;
+					position: relative;
+					bottom: 90px;
+					// right: 3px;
+					z-index: 0;
+					span {
+						color: transparent;
+					}
+				}
+
+			}
+
+			.infoBoard {
+				margin-top: 90px;
+				// visibility: hidden;
+				.danger {
+					position: relative;
+					top: 55px;
+					color: $red;
+					animation: blinking 0.6s infinite;
+					-webkit-animation: blinking 0.6s infinite;
+				}
+
+				.bonusInfo {
+					font-size: 50px;
+					color: $blue;
+					// font-size: 0.8em;
+					position: relative;
+					top: 15px;
+				}
+			}
+		}
+
+		// right side
+		.navigationBoard {
+			overflow: hidden;
+			.mileage, .odometer {
+				color: $blue;
+				font-size: 30px;
+				text-align: right;
+				margin: 40px 30px 0 0;
+			}
+
+			.odometer {
+				margin: 10px 30px 0 0;
+				visibility: hidden;
+			}
+			
+
+
+			.foeHearts {
+				width: 220px;
+				height: 30px;
+				float: right;
+				margin-top: 57px;
+				padding-right: 30px;
+
+				.heart {
+					float: right;
+					margin-right: 5px;
+					display: inline-block;
+					width: 30px;
+					height: 30px;
+					background-image: url('../images/heart.png');
+				}
+			}
+
+
+		
+
+				// &.extraTime .patiencePill:nth-child(1), &.extraTime .patiencePill:nth-child(2) {
+				// 	background-color: $blue;
+				// }
+			}
+		}	
+	}
+
+	// bottom
+	.stageBoard {
+		width: 400px;
+		height: 80px;
+		position: relative;
+		bottom: 470px;
+		left: 470px;
+		overflow: hidden;
+
+
+		.stageInfo {
+			margin-top: 50px;
+			clear: both;
+			text-align: right;
+			// text-align: right;
+			font-size: 20px;
+			-webkit-transition: left 5s;
+			-webkit-transition-timing-function:linear;
+			-moz-transition: left 5s;
+			-moz-transition-timing-function:linear;
+			-o-transition: left 5s;
+			-o-transition-timing-function:linear;
+			transition: left 5s;
+			transition-timing-function:linear;
+			position: relative;
+		}
+	}
+
+
+// --------------------------
+// --------------------------
+
+.cannonball {
+	width: 30px;
+	height: 30px;
+	border-radius: 30px;
+	background: #000;
+	position: relative;
+}
+
+	.tankZone {
+		// background-color: orange;
+		width: 600px;
+		height: 300px;
+		position: relative;
+		bottom: 100px;
+		left: 90px;
+
+		.tank {
+			background-image: url("../images/TheTank.png");
+			width: 300px;
+			height: 150px;
+			position: relative;
+			top: 150px;
+			// left: 0px;
+			left: 1500px;
+
+			z-index: 100;
+
+			&.explosion {
+				
+				}
+
+			.cannonball {
+				left: 285px;
+				top: 50px;
+			}
+		}
+
+		.bonus {
+			width: 100px;
+			height: 100px;
+			position: relative;
+			left: 10000px;
+		}
+
+		$bonuses: ('extraScore', 'extraLife', 'extraTime', 'doubleShooter', 'foresight');
+		@each $bonus in $bonuses {
+			[data-bonus="#{$bonus}"] {
+				background-image: url("../images/bonus/#{$bonus}.png");
+			}
+		}
+
+		.scored {
+			left: 75px;
+			bottom: 120px;
+			z-index: 100;
+			animation: tankScoredAnimation 1.2s;
+		}
+
+		@keyframes tankScoredAnimation {
+		100% {bottom: 240px;}
+		}
+	}
+	
+
+
+// --------------------------
+// --------------------------
+
+
+	.pathway {
+		width:1100px;
+		height: 80px;
+		position: relative;
+		top: -170px;
+		right: 100px;
+		overflow: hidden;
+		padding-left: 50px;
+
+		.ground {
+			z-index: -10;
+			width: 50px;
+			height: 100%;
+			display: inline-block;
+
+		}
+	}
+// --------------------------
+// --------------------------
+
+	.foeZone {
+		width: 500px;
+		height: 300px;
+		position: relative;
+		left: 400px;
+		bottom: 480px;
+
+		.foeTank {
+			width: 400px;
+			height: 300px;
+			position: relative;
+			top: 0px;
+			left: 520px;
+			-webkit-transition-timing-function: linear;
+			-webkit-transition: left 1s;
+			-moz-transition-timing-function: linear;
+			-moz-transition: left 1s;
+			-o-transition-timing-function: linear;
+			-o-transition: left 1s;
+			transition-timing-function: linear;
+			transition: left 1s;
+			background-position: left bottom;
+			background-repeat: no-repeat;
+			
+			.explosion {
+				//right
+			}
+
+			.cannonball {
+				top: 205px;
+			}
+
+			
+			
+		}
+
+		$foes: ('tank1', 'tank2', 'tank3', 'van1', 'van2', "atom1", "atom2", "cosmic1", "cosmic2", "hammer1", 'missle1', 'missle2', "chairman1");
+		@each $foe in $foes {
+			[data-foe="#{$foe}"] {
+				background-image: url("../images/foes/#{$foe}.png");
+			}
+		}
+		
+		
+
+		.scored {
+			left: 200px;
+			bottom: 180px;
+			animation: foeScoredAnimation 1.2s;
+		}
+
+		@keyframes foeScoredAnimation {
+		100% {bottom: 290px;}
+		}
+
+
+
+	}
+	.hide {
+			visibility: hidden;
+		}
+	
+	.scored {
+			opacity: 0.8;
+			font-size: 70px;
+			color: $green;
+			position: relative;
+		}
+
+	.explosion {
+			z-index: 100;
+			width: 100%;
+			height: 100%;
+			opacity: 1;
+	
+			position: relative;
+			bottom: -30px;
+			left: 90px;
+	
+			background-position: left center;
+			background-repeat: no-repeat;
+			background-image: url("../images/explosion.png");
+			animation: xplode 0.17s;		 	
+		}
+
+	@keyframes xplode {
+		100% {transform: scale(2.3); opacity: 0.5}
+	}
+
+
+	.patienceBar {
+				margin: auto;
+				margin-right: 30px;
+				width: 350px;
+				height: 2px;
+				padding: auto;
+				padding-right: 60px;
+				
+				.patiencePill {
+					float: right;
+					margin: 1px;
+					width: 15px;
+					height: 8px;
+					background-color: #000;
+					border-radius: 10px;
+
+					&.extraPill {
+						background-color: $blue;
+					}
+				}
+
+
+}
+
+.red {
+	color: $red;
+}
+
+.win {
+	color: $red;
+	animation: blinking 1.2s infinite;
+	-webkit-animation: blinking 1.2s infinite;
+}
